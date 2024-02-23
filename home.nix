@@ -30,8 +30,8 @@
 	pkgs.nodejs_21
 	#pkgs.protonvpn-gui
 	#pkgs.ciscoPacketTracer8
-	pkgs.distrobox
-	pkgs.docker
+	#pkgs.distrobox
+	pkgs.podman
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
