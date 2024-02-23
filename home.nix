@@ -30,7 +30,7 @@
 	pkgs.nodejs_21
 	#pkgs.protonvpn-gui
 	#pkgs.ciscoPacketTracer8
-	#pkgs.distrobox
+	pkgs.distrobox
 	pkgs.podman
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
