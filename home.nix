@@ -18,20 +18,23 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
-	pkgs.neovim
-	pkgs.brave
-	pkgs.libreoffice
-	pkgs.onlyoffice-bin
-	pkgs.obsidian
+    # # Adds the 'hello' command to your environment. It prints a friendly
+    # # "Hello, world!" when run.
+    # pkgs.hello
+    pkgs.neovim
+    pkgs.brave
+    pkgs.obsidian
 	pkgs.git
+	pkgs.gcc
+	pkgs.ciscoPacketTracer8
 	pkgs.syncthing
 	pkgs.zotero
 	pkgs.wl-clipboard		# Needed for neovim clipboard.
-	pkgs.nodejs_21
-	#pkgs.protonvpn-gui
-	#pkgs.ciscoPacketTracer8
-	pkgs.distrobox
-	pkgs.podman
+	pkgs.libreoffice
+	pkgs.onlyoffice-bin
+	pkgs.protonvpn-gui
+	pkgs.python3
+	pkgs.tmux
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -45,10 +48,6 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-  ];
-
-  nixpkgs.config.permittedInsecurePackages = [
-  "electron-25.9.0"
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -84,7 +83,7 @@
   #  /etc/profiles/per-user/lukas/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    EDITOR = "neovim";
+    # EDITOR = "emacs";
   };
 
   # Let Home Manager install and manage itself.

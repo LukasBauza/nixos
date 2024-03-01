@@ -1,29 +1,36 @@
 {
-  description = "Home Manager configuration of lukas";
 
-  inputs = {
-    # Specify the source of Home Manager and Nixpkgs.
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-  };
+	description = "My first flake!";
 
-  outputs = { nixpkgs, home-manager, ... }:
-    let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-    in {
-      homeConfigurations."lukas" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+	inputs = {
+		#nixpkgs = {
+		#	url = "github:NixOS/nixpkgs/nixos-unstable";
+		#};
+		nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+		home-manager.url = "github:nix-community/home-manager/master";
+		# Makes sure that home-manager is the same version as nixpkgs.
+		home-manager.inputs.nixpkgs.follows = "nixpkgs";
+	};
 
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
-        modules = [ ./home.nix ];
+	outputs = { self, nixpkgs, home-manager, ... }: 
+		let
+			lib = nixpkgs.lib;
+			system = "x86_64-linux";
+			pkgs = nixpkgs.legacyPackages.${system};
+		in {
+			nixosConfigurations = {
+				nixos = lib.nixosSystem {
+					inherit system;
+					modules = [ ./configuration.nix ];
+				};
+			};
 
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
-      };
-    };
+			homeConfigurations = {
+				lukas = home-manager.lib.homeManagerConfiguration {
+					inherit pkgs;
+					modules = [ ./home.nix ];
+				};
+			};
+		};
+
 }
