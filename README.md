@@ -1,1 +1,1 @@
-My nix home-manager configuration.
+My PC configuration using NixOS, nix package manager, flakes and home-manager.
