@@ -51,9 +51,6 @@
 	pkgs.xterm
   ];
 
-	# Enable hyprland window manager.
-	programs.hyprland.enable = true;
-
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
@@ -117,6 +114,20 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+	# Needed for distrobox to work.
+	# Find a way to write this in home-manager.
+  virtualisation = {
+    podman = {
+      enable = true;
+
+      # Create a `docker` alias for podman, to use it as a drop-in replacement
+      dockerCompat = true;
+
+      # Required for containers under podman-compose to be able to talk to each other.
+      defaultNetwork.settings.dns_enabled = true;
+    };
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

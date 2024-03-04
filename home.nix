@@ -15,6 +15,8 @@
   # release notes.
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
+  nixpkgs.config.allowUnfree = true;
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
@@ -35,6 +37,8 @@
 	pkgs.protonvpn-gui
 	pkgs.python3
 	pkgs.tmux
+	pkgs.distrobox
+	pkgs.podman
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -49,8 +53,6 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
-
-  nixpkgs.config.allowUnfree = true;
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
