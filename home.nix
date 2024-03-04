@@ -38,7 +38,9 @@
 	pkgs.python3
 	pkgs.tmux
 	pkgs.distrobox
-	pkgs.podman
+	pkgs.podman				# Needed for distrobox.
+	pkgs.virt-manager
+	pkgs.libvirt			# Needed for virt-manager
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -53,6 +55,14 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
+
+	# QEMU settings for virt-manager.
+  dconf.settings = {
+  "org/virt-manager/virt-manager/connections" = {
+    autoconnect = ["qemu:///system"];
+    uris = ["qemu:///system"];
+  };
+};
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
