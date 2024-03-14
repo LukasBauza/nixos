@@ -19,28 +19,33 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
+  home.packages = with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
-    pkgs.neovim
-    pkgs.brave
-    pkgs.obsidian
-	pkgs.git
-	pkgs.gcc
-	pkgs.ciscoPacketTracer8
-	pkgs.syncthing
-	pkgs.zotero
-	pkgs.wl-clipboard		# Needed for neovim clipboard.
-	pkgs.libreoffice
-	pkgs.onlyoffice-bin
-	pkgs.protonvpn-gui
-	pkgs.python3
-	pkgs.tmux
-	pkgs.distrobox
-	pkgs.podman				# Needed for distrobox.
-	pkgs.virt-manager
-	pkgs.libvirt			# Needed for virt-manager
+    neovim
+    brave
+    obsidian
+	git
+	gcc
+	ciscoPacketTracer8
+	syncthing
+	zotero
+	wl-clipboard		# Needed for neovim clipboard.
+	libreoffice-qt
+	hunspell				# Spell check for libreoffice.
+	hunspellDicts.uk_UA
+	onlyoffice-bin_latest
+	protonvpn-gui
+	python3
+	tmux
+	distrobox
+	podman				# Needed for distrobox.
+	virt-manager
+	libvirt			# Needed for virt-manager
+	protonvpn-gui
+	gnumake
+	cargo
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -54,6 +59,8 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+
+	(pkgs.nerdfonts.override { fonts = [ "IntelOneMono" ]; })
   ];
 
 	# QEMU settings for virt-manager.
@@ -100,4 +107,6 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+	# Fonts
+  fonts.fontconfig.enable = true;
 }
