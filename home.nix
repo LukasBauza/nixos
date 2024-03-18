@@ -33,8 +33,6 @@
 	zotero
 	wl-clipboard		# Needed for neovim clipboard.
 	libreoffice-qt
-	hunspell				# Spell check for libreoffice.
-	hunspellDicts.uk_UA
 	onlyoffice-bin_latest
 	protonvpn-gui
 	python3
@@ -46,6 +44,7 @@
 	protonvpn-gui
 	gnumake
 	cargo
+	discord
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
