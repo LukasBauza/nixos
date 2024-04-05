@@ -11,10 +11,9 @@
 		        # Makes sure that home-manager is the same version as nixpkgs.
                 inputs.nixpkgs.follows = "nixpkgs";
             };
-        hyprland.url = "github:hyprwm/Hyprland";
 	};
 
-	outputs = { self, nixpkgs, home-manager, hyprland, ... }: 
+	outputs = { self, nixpkgs, home-manager, ... }: 
 		let
 			lib = nixpkgs.lib;
 			system = "x86_64-linux";
@@ -25,8 +24,6 @@
 					inherit system;
 					modules = [
                     ./configuration.nix
-                    hyprland.nixosModules.default
-                    { programs.hyprland.enable = true; }
                     ];
 				};
 			};
@@ -36,8 +33,6 @@
 					inherit pkgs;
 					modules = [
                     ./home.nix
-                    #hyprland.homeManagerModules.default
-                    #{ wayland.windowManager.hyprland.enable = true; }
                     ];
 				};
 			};

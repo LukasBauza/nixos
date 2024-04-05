@@ -65,6 +65,7 @@
 	gnome.seahorse
 	gnome.gnome-music
 	gnome-tour
+    gnome-console
   ];
 
   # Configure keymap in X11
