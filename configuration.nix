@@ -16,7 +16,7 @@
 	boot.blacklistedKernelModules = [ "elan_i2c" ];		# Allows touchpad to work.
 
   # boot.initrd.luks.devices."luks-b8229fc4-7190-4c63-8cc0-7d9a15ced11d".device = "/dev/disk/by-uuid/b8229fc4-7190-4c63-8cc0-7d9a15ced11d";
-  # Better way for handling encrypted devices (no longer need location.
+  # Better way for handling encrypted devices (no longer need uuid/luks location).
   boot.initrd.systemd.enable = true;
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
