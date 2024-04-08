@@ -65,7 +65,6 @@
 	gnome.seahorse
 	gnome.gnome-music
 	gnome-tour
-    gnome-console
   ];
 
   # Configure keymap in X11
@@ -113,6 +112,9 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+    nixpkgs.config.permittedInsecurePackages = [
+                "electron-25.9.0"
+              ];
 	# Needed for distrobox to work.
 	# Find a way to write this in home-manager.
   virtualisation = {

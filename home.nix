@@ -17,6 +17,11 @@
 
     nixpkgs.config.allowUnfree = true;
 
+    # Allows obsidian to work.
+    nixpkgs.config.permittedInsecurePackages = [
+                "electron-25.9.0"
+              ];
+
     # The home.packages option allows you to install Nix packages into your
     # environment.
     home.packages = with pkgs; [
@@ -28,7 +33,7 @@
     obsidian
     git
     gcc
-    ciscoPacketTracer8
+    #ciscoPacketTracer8
     syncthing
     zotero
     wl-clipboard		# Needed for neovim clipboard.
