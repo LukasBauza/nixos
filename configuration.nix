@@ -1,4 +1,4 @@
-# Edit this configuration file to define what sh)ould be installed on
+# Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
@@ -13,11 +13,12 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-	boot.blacklistedKernelModules = [ "elan_i2c" ];		# Allows touchpad to work.
+  boot.blacklistedKernelModules = [ "elan_i2c" ];		# Allows touchpad to work.
 
-  # boot.initrd.luks.devices."luks-b8229fc4-7190-4c63-8cc0-7d9a15ced11d".device = "/dev/disk/by-uuid/b8229fc4-7190-4c63-8cc0-7d9a15ced11d";
+  boot.initrd.luks.devices."luks-b58c5183-c095-41aa-a622-de1f8b261d2c".device = "/dev/disk/by-uuid/b58c5183-c095-41aa-a622-de1f8b261d2c";
   # Better way for handling encrypted devices (no longer need uuid/luks location).
-  boot.initrd.systemd.enable = true;
+  # Although it causes a 1:30 timer to boot.
+  #boot.initrd.systemd.enable = true;
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -71,8 +72,8 @@
 
   # Configure keymap in X11
   services.xserver = {
-    xkb.layout = "gb";
-    xkb.variant = "";
+    layout = "gb";
+    xkbVariant = "";
   };
 
   # Configure console keymap
@@ -104,31 +105,16 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.lukas = {
     isNormalUser = true;
-    description = "lukas";
+    description = "Lukas";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-
+      firefox
+    #  thunderbird
     ];
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-	# Needed for distrobox to work.
-	# Find a way to write this in home-manager.
-  virtualisation = {
-    podman = {
-      enable = true;
-
-      # Create a `docker` alias for podman, to use it as a drop-in replacement
-      dockerCompat = true;
-
-      # Required for containers under podman-compose to be able to talk to each other.
-      defaultNetwork.settings.dns_enabled = true;
-    };
-	libvirtd.enable = true;
-  };
-	#programs.virt-manager.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -165,4 +151,5 @@
   system.stateVersion = "23.11"; # Did you read the comment?
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
 }
