@@ -17,10 +17,13 @@
 
     nixpkgs.config.allowUnfree = true;
 
+    # Fonts
+    fonts.fontconfig.enable = true;
+
     # Allows obsidian to work.
     nixpkgs.config.permittedInsecurePackages = [
                 "electron-25.9.0"
-              ];
+    ];
 
     # The home.packages option allows you to install Nix packages into your
     # environment.
@@ -33,12 +36,12 @@
     obsidian
     git
     gcc
-    #ciscoPacketTracer8
+    ciscoPacketTracer8
     syncthing
     zotero
     wl-clipboard		# Needed for neovim clipboard.
     libreoffice-qt
-    onlyoffice-bin_latest
+    onlyoffice-bin_7_5
     protonvpn-gui
     python3
     tmux
@@ -72,6 +75,7 @@
     # '')
 
     (pkgs.nerdfonts.override { fonts = [ "IntelOneMono" ]; })
+
     ];
 
     # QEMU settings for virt-manager.
@@ -118,6 +122,5 @@
 
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;
-    # Fonts
-    fonts.fontconfig.enable = true;
+
 }
