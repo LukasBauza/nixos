@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 
 {
     # Home Manager needs a bit of information about you and the paths it should
@@ -15,7 +15,7 @@
     # release notes.
     home.stateVersion = "23.11"; # Please read the comment before changing.
 
-        nixpkgs.config.allowUnfree = true;
+    nixpkgs.config.allowUnfree = true;
 
     # Fonts
     fonts.fontconfig.enable = true;
@@ -27,8 +27,9 @@
 
     # The home.packages option allows you to install Nix packages into your
     # environment.
-    home.packages = with pkgs; [
-        neovim
+    home.packages = 
+        (with pkgs; [
+            neovim
             brave
             obsidian
             git
@@ -38,7 +39,6 @@
             zotero
             wl-clipboard		# Needed for neovim clipboard.
             libreoffice-qt
-            onlyoffice-bin_7_5
             protonvpn-gui
             python3
             tmux
@@ -57,23 +57,15 @@
             lazygit
             nodejs_21
             tree-sitter
-
-            # # It is sometimes useful to fine-tune packages, for example, by applying
-            # # overrides. You can do that directly here, just don't forget the
-            # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-            # # fonts?
-            # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-
-            # # You can also create simple shell scripts directly inside your
-            # # configuration. For example, this adds a command 'my-hello' to your
-            # # environment:
-            # (pkgs.writeShellScriptBin "my-hello" ''
-            #   echo "Hello, ${config.home.username}!"
-            # '')
-
             (pkgs.nerdfonts.override { fonts = [ "IntelOneMono" ]; })
 
-            ];
+        ])
+
+        ++
+
+        (with pkgs-unstable; [
+            onlyoffice-bin_latest
+        ]);
 
     # QEMU settings for virt-manager.
     dconf.settings = {
