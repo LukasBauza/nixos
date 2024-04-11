@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-unstable, ... }:
+{ config, pkgs, ... }:
 
 {
     # Home Manager needs a bit of information about you and the paths it should
@@ -27,45 +27,38 @@
 
     # The home.packages option allows you to install Nix packages into your
     # environment.
-    home.packages = 
-        (with pkgs; [
-            neovim
-            brave
-            obsidian
-            git
-            gcc
-            ciscoPacketTracer8
-            syncthing
-            zotero
-            wl-clipboard		# Needed for neovim clipboard.
-            libreoffice-qt
-            protonvpn-gui
-            python3
-            tmux
-            distrobox
-            podman				# Needed for distrobox.
-            virt-manager
-            libvirt			# Needed for virt-manager
-            protonvpn-gui
-            gnumake
-            cargo
-            discord
-            alacritty
-            ripgrep
-            fd
-            #vimPlugins.nvim-treesitter
-            lazygit
-            nodejs_21
-            tree-sitter
-            (pkgs.nerdfonts.override { fonts = [ "IntelOneMono" ]; })
+    home.packages = with pkgs; [
+        neovim
+        brave
+        obsidian
+        git
+        gcc
+        #ciscoPacketTracer8
+        syncthing
+        zotero
+        wl-clipboard		# Needed for neovim clipboard.
+        libreoffice-qt
+        protonvpn-gui
+        python3
+        tmux
+        distrobox
+        podman				# Needed for distrobox.
+        virt-manager
+        libvirt			# Needed for virt-manager
+        protonvpn-gui
+        gnumake
+        cargo
+        discord
+        alacritty
+        ripgrep
+        fd
+        #vimPlugins.nvim-treesitter
+        lazygit
+        nodejs_21
+        tree-sitter
+        (pkgs.nerdfonts.override { fonts = [ "IntelOneMono" ]; })
 
-        ])
-
-        ++
-
-        (with pkgs-unstable; [
-            onlyoffice-bin_latest
-        ]);
+    ];
 
     # QEMU settings for virt-manager.
     dconf.settings = {
