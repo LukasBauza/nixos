@@ -15,75 +15,72 @@
     # release notes.
     home.stateVersion = "23.11"; # Please read the comment before changing.
 
-    nixpkgs.config.allowUnfree = true;
+        nixpkgs.config.allowUnfree = true;
 
     # Fonts
     fonts.fontconfig.enable = true;
 
     # Allows obsidian to work.
     nixpkgs.config.permittedInsecurePackages = [
-                "electron-25.9.0"
+        "electron-25.9.0"
     ];
 
     # The home.packages option allows you to install Nix packages into your
     # environment.
     home.packages = with pkgs; [
-    # Adds the 'hello' command to your environment. It prints a friendly
-    # "Hello, world!" when run.
-    # pkgs.hello
-    neovim
-    brave
-    obsidian
-    git
-    gcc
-    ciscoPacketTracer8
-    syncthing
-    zotero
-    wl-clipboard		# Needed for neovim clipboard.
-    libreoffice-qt
-    onlyoffice-bin_7_5
-    protonvpn-gui
-    python3
-    tmux
-    distrobox
-    podman				# Needed for distrobox.
-    virt-manager
-    libvirt			# Needed for virt-manager
-    protonvpn-gui
-    gnumake
-    cargo
-    discord
-    alacritty
-    ripgrep
-    fd
-    #vimPlugins.nvim-treesitter
-    lazygit
-    nodejs_21
-    tree-sitter
+        neovim
+            brave
+            obsidian
+            git
+            gcc
+            ciscoPacketTracer8
+            syncthing
+            zotero
+            wl-clipboard		# Needed for neovim clipboard.
+            libreoffice-qt
+            onlyoffice-bin_7_5
+            protonvpn-gui
+            python3
+            tmux
+            distrobox
+            podman				# Needed for distrobox.
+            virt-manager
+            libvirt			# Needed for virt-manager
+            protonvpn-gui
+            gnumake
+            cargo
+            discord
+            alacritty
+            ripgrep
+            fd
+            #vimPlugins.nvim-treesitter
+            lazygit
+            nodejs_21
+            tree-sitter
 
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+            # # It is sometimes useful to fine-tune packages, for example, by applying
+            # # overrides. You can do that directly here, just don't forget the
+            # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
+            # # fonts?
+            # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
+            # # You can also create simple shell scripts directly inside your
+            # # configuration. For example, this adds a command 'my-hello' to your
+            # # environment:
+            # (pkgs.writeShellScriptBin "my-hello" ''
+            #   echo "Hello, ${config.home.username}!"
+            # '')
 
-    (pkgs.nerdfonts.override { fonts = [ "IntelOneMono" ]; })
+            (pkgs.nerdfonts.override { fonts = [ "IntelOneMono" ]; })
 
-    ];
+            ];
 
     # QEMU settings for virt-manager.
     dconf.settings = {
-    "org/virt-manager/virt-manager/connections" = {
-    autoconnect = ["qemu:///system"];
-    uris = ["qemu:///system"];
-    };
+        "org/virt-manager/virt-manager/connections" = {
+            autoconnect = ["qemu:///system"];
+            uris = ["qemu:///system"];
+        };
     };
 
     # Home Manager is pretty good at managing dotfiles. The primary way to manage
