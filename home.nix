@@ -34,7 +34,6 @@
         obsidian
         git
         gcc
-        #ciscoPacketTracer8
         syncthing
         zotero
         wl-clipboard        # Needed for neovim clipboard.
@@ -60,7 +59,6 @@
     ])
     ++
     (with pkgs-unstable; [
-        # TODO: Need to install ciscoPacketTracer8 as pkgs-unstable.
         alacritty
         ciscoPacketTracer8
     ]);

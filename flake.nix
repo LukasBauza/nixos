@@ -23,9 +23,9 @@
         username = "Lukas";
         name = "Lukas";
         #pkgs = nixpkgs.legacyPackages.${system};
+        #pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
         pkgs = import nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };
         pkgs-unstable = import nixpkgs-unstable { system = "x86_64-linux"; config.allowUnfree = true; };
-        #pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
     in {
         nixosConfigurations = {
             nixos = lib.nixosSystem {
