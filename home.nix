@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 
 {
     # Home Manager needs a bit of information about you and the paths it should
@@ -27,7 +27,8 @@
 
     # The home.packages option allows you to install Nix packages into your
     # environment.
-    home.packages = with pkgs; [
+    home.packages = 
+    (with pkgs; [
         neovim
         brave
         obsidian
@@ -36,20 +37,19 @@
         #ciscoPacketTracer8
         syncthing
         zotero
-        wl-clipboard		# Needed for neovim clipboard.
+        wl-clipboard        # Needed for neovim clipboard.
         libreoffice-qt
         protonvpn-gui
         python3
         tmux
         distrobox
-        podman				# Needed for distrobox.
+        podman              # Needed for distrobox.
         virt-manager
-        libvirt			# Needed for virt-manager
+        libvirt             # Needed for virt-manager
         protonvpn-gui
         gnumake
         cargo
         discord
-        alacritty
         ripgrep
         fd
         #vimPlugins.nvim-treesitter
@@ -57,8 +57,12 @@
         nodejs_21
         tree-sitter
         (pkgs.nerdfonts.override { fonts = [ "IntelOneMono" ]; })
-
-    ];
+    ])
+    ++
+    (with pkgs-unstable; [
+        # TODO: Need to install ciscoPacketTracer8 as pkgs-unstable.
+        alacritty
+    ]);
 
     # QEMU settings for virt-manager.
     dconf.settings = {
