@@ -40,6 +40,7 @@
         libreoffice-qt
         protonvpn-gui
         python3
+        qtcreator
         tmux
         distrobox
         podman              # Needed for distrobox.
