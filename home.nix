@@ -62,6 +62,7 @@
     (with pkgs-unstable; [
         # TODO: Need to install ciscoPacketTracer8 as pkgs-unstable.
         alacritty
+        ciscoPacketTracer8
     ]);
 
     # QEMU settings for virt-manager.
