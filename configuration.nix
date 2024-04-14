@@ -15,7 +15,7 @@
     boot.loader.efi.canTouchEfiVariables = true;
     boot.blacklistedKernelModules = [ "elan_i2c" ];		# Allows touchpad to work.
 
-        boot.initrd.luks.devices."luks-b58c5183-c095-41aa-a622-de1f8b261d2c".device = "/dev/disk/by-uuid/b58c5183-c095-41aa-a622-de1f8b261d2c";
+    boot.initrd.luks.devices."luks-7bdcd7f8-2832-49cc-9935-a01a9a336a75".device = "/dev/disk/by-uuid/7bdcd7f8-2832-49cc-9935-a01a9a336a75";
 # Better way for handling encrypted devices (no longer need uuid/luks location).
 # Although it causes a 1:30 timer to boot.
 #boot.initrd.systemd.enable = true;
