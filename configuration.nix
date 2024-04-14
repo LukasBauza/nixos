@@ -68,6 +68,10 @@
             gnome.seahorse
             gnome.gnome-music
             gnome-tour
+            gnome.gnome-calendar
+            gnome.gnome-weather
+            gnome.gnome-contacts
+            gnome.gnome-maps
     ];
 
 # Configure keymap in X11
