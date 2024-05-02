@@ -32,21 +32,21 @@
         neovim
         brave
         obsidian
+        standardnotes
         git
         gcc
         syncthing
         zotero
         wl-clipboard        # Needed for neovim clipboard.
         libreoffice-qt
-        protonvpn-gui
         python3
         qtcreator
         tmux
+        zellij
         distrobox
         podman              # Needed for distrobox.
         virt-manager
         libvirt             # Needed for virt-manager
-        protonvpn-gui
         gnumake
         cargo
         discord
@@ -56,12 +56,17 @@
         lazygit
         nodejs_21
         tree-sitter
+        btop
+        appimage-run
+        gnome.gnome-software    # Flatpak store
+        whatsapp-for-linux
         (pkgs.nerdfonts.override { fonts = [ "IntelOneMono" ]; })
     ])
     ++
     (with pkgs-unstable; [
-        alacritty
         ciscoPacketTracer8
+        protonvpn-gui
+        alacritty
     ]);
 
     # QEMU settings for virt-manager.

@@ -58,6 +58,9 @@
     services.xserver.displayManager.gdm.enable = true;
     services.xserver.desktopManager.gnome.enable = true;
 
+# Enable Flatpak
+    services.flatpak.enable = true;
+
     environment.gnome.excludePackages = with pkgs; [
         gnome.cheese
             gnome.epiphany
