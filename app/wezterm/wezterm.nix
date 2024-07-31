@@ -23,6 +23,8 @@
 
 		config.enable_tab_bar = false
 
+		config.window_decorations = "TITLE | RESIZE"
+
 		config.window_padding = {
 			left = 2,
 			right = 2,
