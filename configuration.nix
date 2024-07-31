@@ -9,7 +9,6 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./desktop/gnome.nix
-      ./desktop/hyprland.nix
       #./system/yoga_slim_7.nix
     ];
 
