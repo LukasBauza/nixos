@@ -38,7 +38,6 @@
 	(with pkgs; [
 		brave
 		protonvpn-gui
-		gcc
 		syncthing
 		zotero
 		#ciscoPacketTracer8

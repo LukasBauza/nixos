@@ -3,5 +3,8 @@
 {
 	home.packages = with pkgs; [
 		cmake
+		coreutils
+		clang
+		gnumake
 	];
 }
