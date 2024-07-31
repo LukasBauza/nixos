@@ -15,6 +15,7 @@
 	./app/doom_emacs.nix
 	./app/wezterm.nix
 	./system/font.nix
+	./dev_tools.nix
   ];
 
   # This value determines the Home Manager release that your configuration is
