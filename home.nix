@@ -13,6 +13,7 @@
   imports = [
 	./app/git/git.nix
 	./app/doom_emacs/doom_emacs.nix
+	./app/wezterm/wezterm.nix
 	./system/font.nix
   ];
 
