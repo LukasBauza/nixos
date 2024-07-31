@@ -6,5 +6,6 @@
 		coreutils
 		clang
 		gnumake
+		libtool
 	];
 }
