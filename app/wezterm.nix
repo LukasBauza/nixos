@@ -25,6 +25,8 @@
 
 		config.window_decorations = "TITLE | RESIZE"
 
+		config.hide_mouse_cursor_when_typing = false
+
 		config.window_padding = {
 			left = 2,
 			right = 2,
