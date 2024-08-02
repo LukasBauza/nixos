@@ -41,6 +41,7 @@
 		syncthing
 		zotero
     python3
+    pandoc
 		#ciscoPacketTracer8
   	])
 	++
