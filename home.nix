@@ -42,6 +42,8 @@
 		zotero
     python3
     pandoc
+    texliveBasic
+    standardnotes
 		#ciscoPacketTracer8
   	])
 	++
