@@ -40,7 +40,7 @@
 		protonvpn-gui
 		syncthing
 		zotero
-    python
+    python3
 		#ciscoPacketTracer8
   	])
 	++
