@@ -34,7 +34,7 @@
 			bottom = 0,
 		}
 
-		config.window_background_opacity = 0.95
+		config.window_background_opacity = 1
 
 		-- and finally, return the configuration to wezterm
 		return config
