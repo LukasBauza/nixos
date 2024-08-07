@@ -7,5 +7,6 @@
 		clang
 		gnumake
 		libtool
+		distrobox
 	];
 }
