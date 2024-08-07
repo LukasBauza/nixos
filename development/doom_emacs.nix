@@ -8,5 +8,7 @@
 		findutils
 		# Optional dependencies
 		fd
+		nodePackages_latest.bash-language-server
+		shellcheck
 	];
 }
