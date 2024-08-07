@@ -5,7 +5,7 @@
 	programs.wezterm.enable = true;
 
 	programs.wezterm.extraConfig = 
-		''
+		/* lua */ ''
 		-- Pull in the wezterm API
 		local wezterm = require("wezterm")
 
