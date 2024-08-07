@@ -11,9 +11,9 @@
   home.homeDirectory = "/home/lukas";
 
   imports = [
-	./app/git.nix
-	./app/doom_emacs.nix
-	./app/wezterm.nix
+	./development/git.nix
+	./development/doom_emacs.nix
+	./development/wezterm.nix
 	./system/font.nix
 	./dev_tools.nix
   ];
