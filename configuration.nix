@@ -8,16 +8,15 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./desktop/gnome.nix
-      #./system/yoga_slim_7.nix
+      ./desktop/kde.nix
     ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.luks.devices."luks-2bea00b4-fcb7-4172-bb58-1591a5dbe578".device = "/dev/disk/by-uuid/2bea00b4-fcb7-4172-bb58-1591a5dbe578";
-  networking.hostName = "nixos"; # Define your hostname.
+  boot.initrd.luks.devices."luks-bf1f920a-c683-4a59-8a49-0a80719bbdf7".device = "/dev/disk/by-uuid/bf1f920a-c683-4a59-8a49-0a80719bbdf7";
+  networking.hostName = "nixos-pc"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -46,16 +45,14 @@
   };
 
   # Enable the X11 windowing system.
+  # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
-
-  services.xserver.excludePackages = [
-  	pkgs.xterm
-	];
+  services.xserver.excludePackages = [ pkgs.xterm ];
 
   # Configure keymap in X11
-  services.xserver = {
+  services.xserver.xkb = {
     layout = "gb";
-    xkbVariant = "";
+    variant = "";
   };
 
   # Configure console keymap
@@ -89,9 +86,13 @@
     description = "Lukas";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
+      kdePackages.kate
     #  thunderbird
     ];
   };
+
+  # Install firefox.
+  programs.firefox.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -130,6 +131,6 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
 
-nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 }
