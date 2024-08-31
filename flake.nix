@@ -23,7 +23,7 @@
         pkgs-unstable = import nixpkgs-unstable { system = "x86_64-linux"; config.allowUnfree = true; };
     in {
         nixosConfigurations = {
-            nixos = lib.nixosSystem {
+            nixos-pc = lib.nixosSystem {
                 inherit system;
                 modules = [ ./configuration.nix ];
                 specialArgs = {
