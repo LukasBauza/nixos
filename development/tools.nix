@@ -8,5 +8,6 @@
 		gnumake
 		libtool
 		distrobox
+		arduino-ide
 	];
 }

@@ -8,14 +8,9 @@
             # Makes sure that home-manager is the same version as nixpkgs.
             inputs.nixpkgs.follows = "nixpkgs";
         };
-	
-	nixos-cosmic = {
-	    url = "github:lilyinstarlight/nixos-cosmic";
-	    inputs.nixpkgs.follows = "nixpkgs";
-	};
     };
 
-    outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixos-cosmic, ... }:
+    outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }:
     let
         lib = nixpkgs.lib;
         system = "x86_64-linux";
@@ -47,19 +42,5 @@
                 };
             };
         };
-
-	nixosConfigurations = {
-        modules = [
-          {
-            nix.settings = {
-              substituters = [ "https://cosmic.cachix.org/" ];
-              trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
-            };
-          }
-          nixos-cosmic.nixosModules.default
-          ./configuration.nix
-        ];
-      };
     };
-
 }
