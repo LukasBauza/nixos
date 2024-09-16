@@ -28,12 +28,12 @@
 		protonvpn-gui
 		syncthing
 		zotero
-    python3
-    pandoc
-    texliveBasic
-    standardnotes
-		#ciscoPacketTracer8
-		virt-manager
+        python3
+        pandoc
+        texliveBasic
+        standardnotes
+        ciscoPacketTracer8
+        virt-manager
   	])
 	++
 	(with pkgs-unstable; [
