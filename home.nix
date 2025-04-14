@@ -28,6 +28,7 @@
 		python3
 		virt-manager
 		protonvpn-gui
+		syncthing
 		syncthingtray
 		zotero
 		#ciscoPacketTracer8
