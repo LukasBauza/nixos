@@ -8,15 +8,14 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./desktop/kde.nix
     ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.luks.devices."luks-bf1f920a-c683-4a59-8a49-0a80719bbdf7".device = "/dev/disk/by-uuid/bf1f920a-c683-4a59-8a49-0a80719bbdf7";
-  networking.hostName = "nixos-pc"; # Define your hostname.
+  boot.initrd.luks.devices."luks-2248aecc-e14c-4cc1-9889-46c66a394f68".device = "/dev/disk/by-uuid/2248aecc-e14c-4cc1-9889-46c66a394f68";
+  networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -47,7 +46,10 @@
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
-  services.xserver.excludePackages = [ pkgs.xterm ];
+
+  # Enable the KDE Plasma Desktop Environment.
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -91,16 +93,20 @@
     ];
   };
 
+  # Install firefox.
+  programs.firefox.enable = true;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  virtualisation.libvirtd.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
+  brave
+  git
+  neovim
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -128,7 +134,7 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.11"; # Did you read the comment?
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
