@@ -27,6 +27,11 @@
   	(with pkgs; [
 		python3
 		virt-manager
+		protonvpn-gui
+		syncthingtray
+		zotero
+		#ciscoPacketTracer8
+		#logseq
 		])
 	++
 	(with pkgs-unstable; [
