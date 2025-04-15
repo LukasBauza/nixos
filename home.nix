@@ -9,7 +9,7 @@
   imports = [
 	./development/git.nix
 	./development/doom_emacs.nix
-	# ./development/wezterm.nix
+	./development/wezterm.nix
 	./system/font.nix
 	./development/tools.nix
   ];
@@ -38,6 +38,7 @@
 	(with pkgs-unstable; [
 		brave
 		neovim
+		libreoffice
 		zoxide
 		]);
 
