@@ -9,9 +9,10 @@
   imports = [
 	./development/git.nix
 	./development/doom_emacs.nix
+    #./development/nvim.nix
 	./development/wezterm.nix
-	./system/font.nix
 	./development/tools.nix
+	./system/font.nix
   ];
 
   # This value determines the Home Manager release that your configuration is
@@ -38,6 +39,7 @@
 	(with pkgs-unstable; [
 		brave
 		neovim
+		wl-clipboard
 		libreoffice
 		zoxide
 		]);
