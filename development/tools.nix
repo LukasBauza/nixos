@@ -8,6 +8,7 @@
 		gnumake
 		libtool
 		distrobox
+		#podman
 		arduino-ide
 	];
 }
