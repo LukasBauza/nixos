@@ -34,7 +34,7 @@
 		zotero
 		unzip		    # Needed for nvim stylua
 		drawio
-		logseq
+		#logseq
 		#ciscoPacketTracer8
 		])
 	++
