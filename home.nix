@@ -32,9 +32,10 @@
 		syncthing
 		syncthingtray
 		zotero
-		unzip
+		unzip		    # Needed for nvim stylua
+		drawio
+		logseq
 		#ciscoPacketTracer8
-		#logseq
 		])
 	++
 	(with pkgs-unstable; [
