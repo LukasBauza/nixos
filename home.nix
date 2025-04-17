@@ -32,6 +32,7 @@
 		syncthing
 		syncthingtray
 		zotero
+		unzip
 		#ciscoPacketTracer8
 		#logseq
 		])
