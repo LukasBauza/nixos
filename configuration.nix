@@ -14,7 +14,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.luks.devices."luks-2248aecc-e14c-4cc1-9889-46c66a394f68".device = "/dev/disk/by-uuid/2248aecc-e14c-4cc1-9889-46c66a394f68";
+  boot.initrd.luks.devices."luks-5020f669-1961-4a61-af79-ba404b6eb246".device = "/dev/disk/by-uuid/5020f669-1961-4a61-af79-ba404b6eb246";
   networking.hostName = "nixos-pc"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -52,12 +52,11 @@
   programs.virt-manager.enable = true;
 
   # Enable the X11 windowing system.
-  # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
 
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  # Enable the GNOME Desktop Environment.
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -73,8 +72,6 @@
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
-  # Bluetooth
-  hardware.bluetooth.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -95,10 +92,9 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.lukas = {
     isNormalUser = true;
-    description = "Lukas";
-    extraGroups = [ "networkmanager" "wheel"  "libvirtd" ];
+    description = "lukas";
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     packages = with pkgs; [
-      kdePackages.kate
     #  thunderbird
     ];
   };
@@ -111,9 +107,6 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
-  #brave
-  #git
-  #neovim
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -144,5 +137,4 @@
   system.stateVersion = "24.11"; # Did you read the comment?
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
 }
