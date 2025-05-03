@@ -31,8 +31,11 @@
 		syncthing
 		syncthingtray
 		zotero
+		jdk
 		unzip		    # Needed for nvim stylua
 		drawio
+		jetbrains-toolbox
+		swappy
 		#logseq
 		#ciscoPacketTracer8
 		])

@@ -51,6 +51,15 @@
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
 
+   virtualisation.libvirtd.qemu = {
+      package = pkgs.qemu_kvm;
+      ovmf = {
+        enable = true;
+        packages = [pkgs.OVMFFull.fd];
+      };
+      swtpm.enable = true;
+   };
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -101,6 +110,8 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  services.flatpak.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
