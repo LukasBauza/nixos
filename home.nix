@@ -36,6 +36,7 @@
 		drawio
 		jetbrains-toolbox
 		swappy
+        file
 		#logseq
 		#ciscoPacketTracer8
 		])

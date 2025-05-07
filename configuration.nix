@@ -105,6 +105,7 @@
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     packages = with pkgs; [
     #  thunderbird
+    gnomeExtensions.displays-adjustments
     ];
   };
 
