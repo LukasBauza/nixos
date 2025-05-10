@@ -105,7 +105,6 @@
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     packages = with pkgs; [
     #  thunderbird
-    gnomeExtensions.displays-adjustments
     ];
   };
 
@@ -128,6 +127,11 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+
+  programs.kdeconnect = {
+    enable = true;
+    package = pkgs.gnomeExtensions.gsconnect;
+  };
 
   # List services that you want to enable:
 
