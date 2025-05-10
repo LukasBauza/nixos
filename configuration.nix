@@ -106,6 +106,7 @@
     packages = with pkgs; [
     #  thunderbird
     gnomeExtensions.forge
+    gnomeExtensions.blur-my-shell
     ];
   };
 
