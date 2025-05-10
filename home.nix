@@ -37,6 +37,7 @@
 		jetbrains-toolbox
 		swappy
         file
+        spotify
 		#logseq
 		#ciscoPacketTracer8
 		])
