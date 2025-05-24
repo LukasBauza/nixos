@@ -9,10 +9,7 @@
         programs.nixvim = {
             enable = true;
 
-        colorschemes.catppuccin = {
-	      enable = true;
-	      settings.flavour = "mocha";
-	    };
+            colorschemes.kanagawa.enable = true;
         };
     };
 }

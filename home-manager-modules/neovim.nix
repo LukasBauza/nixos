@@ -8,8 +8,13 @@
     config = lib.mkIf config.neovim.enable {
         #home.packages = [ pkgs.wl-clipboard ];
         programs.neovim = {
+            package = pkgs-unstable.neovim-unwrapped;
             enable = true;
-            #package = pkgs-unstable.neovim;
+
+            viAlias = true;
+            vimAlias = true;
+            vimdiffAlias = true;
+
             defaultEditor = true;
         };
     };
