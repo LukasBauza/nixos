@@ -1,9 +1,9 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
     options = {
         wezterm.enable = lib.mkEnableOption "enables wezterm"
-    }
+    };
 
     config = lib.mkIf config.git.enable {
         home.packages = [ pkgs.wezterm ];
@@ -46,5 +46,5 @@
             -- and finally, return the configuration to wezterm
             return config
             '';
-    }
+    };
 }

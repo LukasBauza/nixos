@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: {
+{ pkgs, lib, ... }: {
     imports = [
         ./doom_emacs.nix
         ./git.nix

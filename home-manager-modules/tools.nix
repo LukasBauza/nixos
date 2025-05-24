@@ -1,9 +1,9 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
     options = {
         tools.enable = lib.mkEnableOption "enables programming tools like gcc etc."
-    }
+    };
 
     config = lib.mkIf config.git.enable {
         home.packages = with pkgs; [
@@ -16,5 +16,5 @@
             #podman
             arduino-ide
         ];
-    }
+    };
 }
