@@ -5,7 +5,7 @@
         tools.enable = lib.mkEnableOption "enables programming tools like gcc etc.";
     };
 
-    config = lib.mkIf config.git.enable {
+    config = lib.mkIf config.tools.enable {
         home.packages = with pkgs; [
             cmake
             coreutils

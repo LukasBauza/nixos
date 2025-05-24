@@ -6,7 +6,8 @@
         MODULE_NAME.enable = lib.mkEnableOption "enables MODULE_NAME";
     };
 
-    config = lib.mkIf config.git.enable {
+    # FIX: MODULE_NAME should be the name of the module.
+    config = lib.mkIf config.MODULE_NAME.enable {
         # TODO: The setup for the module goes here.
     };
 }

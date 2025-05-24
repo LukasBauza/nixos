@@ -1,6 +1,6 @@
 { pkgs, lib, ... }: {
     imports = [
-        ./doom_emacs.nix
+        ./doom-emacs.nix
         ./git.nix
         ./neovim.nix
         ./tools.nix

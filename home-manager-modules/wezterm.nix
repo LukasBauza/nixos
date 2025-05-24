@@ -5,7 +5,7 @@
         wezterm.enable = lib.mkEnableOption "enables wezterm";
     };
 
-    config = lib.mkIf config.git.enable {
+    config = lib.mkIf config.wezterm.enable {
         home.packages = [ pkgs.wezterm ];
         programs.wezterm.enable = true;
 
