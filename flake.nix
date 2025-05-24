@@ -14,7 +14,7 @@
         };
     };
 
-    outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }:
+    outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixvim, ... }:
     let
             #lib = nixpkgs.lib;
         system = "x86_64-linux";
