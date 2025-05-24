@@ -37,7 +37,10 @@
 
             nixos-laptop = nixpkgs.lib.nixosSystem {
                 inherit system;
-                modules = [ ./hosts/nixos-laptop/configuration.nix ];
+                modules = [
+                        ./hosts/nixos-laptop/configuration.nix
+                        ./nixos-modules/default.nix
+                    ];
                 specialArgs = {
                     inherit username;
                     inherit name;
