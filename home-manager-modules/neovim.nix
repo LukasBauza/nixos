@@ -9,6 +9,7 @@
         #home.packages = [ pkgs.wl-clipboard ];
         programs.neovim = {
             enable = true;
+            #package = pkgs-unstable.neovim;
             defaultEditor = true;
         };
     };

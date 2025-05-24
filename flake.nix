@@ -8,13 +8,13 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
         nixvim = {
-            url = "github:nix-community/nixvim";
+            url = "github:nix-community/nixvim/nixos-24.11";
             # If using a stable channel you can use `url = "github:nix-community/nixvim/nixos-<version>"`
             inputs.nixpkgs.follows = "nixpkgs";
         };
     };
 
-    outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }:
+    outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixvim, ... }:
     let
             #lib = nixpkgs.lib;
         system = "x86_64-linux";
@@ -22,6 +22,7 @@
         name = "Lukas";
         pkgs = import nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };
         pkgs-unstable = import nixpkgs-unstable { system = "x86_64-linux"; config.allowUnfree = true; };
+        nixvim = import nixvim;
     in {
         nixosConfigurations = {
             # nixos-pc is the hostname that is used on the system
@@ -59,6 +60,7 @@
                 modules = [
                         ./hosts/nixos-pc/home.nix
                         ./home-manager-modules/default.nix
+                        nixvim.homeManagerModules.nixvim
                     ];
                 extraSpecialArgs = {
                     inherit username;
@@ -71,6 +73,7 @@
                 modules = [
                         ./hosts/nixos-pc/home.nix
                         ./home-manager-modules/default.nix
+                        nixvim.homeManagerModules.nixvim
                     ];
                 extraSpecialArgs = {
                     inherit username;
