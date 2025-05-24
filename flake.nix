@@ -7,14 +7,9 @@
             # Makes sure that home-manager is the same version as nixpkgs.
             inputs.nixpkgs.follows = "nixpkgs";
         };
-        nixvim = {
-            url = "github:nix-community/nixvim";
-        # If using a stable channel you can use `url = "github:nix-community/nixvim/nixos-<version>"`
-        inputs.nixpkgs.follows = "nixpkgs";
-        };
     };
 
-    outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixvim, ... }:
+    outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }:
     let
             #lib = nixpkgs.lib;
         system = "x86_64-linux";
@@ -64,7 +59,6 @@
                     inherit username;
                     inherit name;
                     inherit pkgs-unstable;
-                    inherit nixvim
                 };
             };
             "lukas@nixos-laptop" = home-manager.lib.homeManagerConfiguration {
@@ -77,7 +71,6 @@
                     inherit username;
                     inherit name;
                     inherit pkgs-unstable;
-                    inherit nixvim
                 };
             };
         };
