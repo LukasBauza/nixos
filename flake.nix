@@ -64,6 +64,7 @@
                     inherit username;
                     inherit name;
                     inherit pkgs-unstable;
+                    inherit nixvim
                 };
             };
             "lukas@nixos-laptop" = home-manager.lib.homeManagerConfiguration {
@@ -76,6 +77,7 @@
                     inherit username;
                     inherit name;
                     inherit pkgs-unstable;
+                    inherit nixvim
                 };
             };
         };
