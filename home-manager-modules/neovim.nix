@@ -6,7 +6,7 @@
     };
 
     config = lib.mkIf config.neovim.enable {
-        home.packages = [ pkgs.neovim pkgs.wl-clipboard ];
+        home.packages = [ pkgs.wl-clipboard ];
         programs.neovim.enable = true;
     };
 }
