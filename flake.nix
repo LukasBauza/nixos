@@ -50,10 +50,22 @@
         };
 
         homeConfigurations = {
-            lukas = home-manager.lib.homeManagerConfiguration {
+            "lukas@nixos-pc" = home-manager.lib.homeManagerConfiguration {
                 inherit pkgs;
                 modules = [
-                        ./home.nix
+                        ./hosts/nixos-pc/home.nix
+                        ./home-manager-modules/default.nix
+                    ];
+                extraSpecialArgs = {
+                    inherit username;
+                    inherit name;
+                    inherit pkgs-unstable;
+                };
+            };
+            "lukas@nixos-laptop" = home-manager.lib.homeManagerConfiguration {
+                inherit pkgs;
+                modules = [
+                        ./hosts/nixos-pc/home.nix
                         ./home-manager-modules/default.nix
                     ];
                 extraSpecialArgs = {
