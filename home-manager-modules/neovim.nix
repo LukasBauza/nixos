@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, pkgs-unstable, lib, ... }:
 
 {
     options = {
@@ -6,7 +6,7 @@
     };
 
     config = lib.mkIf config.neovim.enable {
-        home.packages = [ pkgs.wl-clipboard ];
+        #home.packages = [ pkgs.wl-clipboard ];
         programs.neovim.enable = true;
     };
 }
