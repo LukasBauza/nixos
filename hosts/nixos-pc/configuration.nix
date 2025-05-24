@@ -8,7 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../../nixos-modules/gnome.nix
     ];
 
   gnome.enable = true;

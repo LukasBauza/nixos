@@ -23,7 +23,10 @@
             # nixos-pc is the hostname that is used on the system
             nixos-pc = nixpkgs.lib.nixosSystem {
                 inherit system;
-                modules = [ ./hosts/nixos-pc/configuration.nix ];
+                modules = [
+                        ./hosts/nixos-pc/configuration.nix
+                        ./nixos-modules/default.nix
+                    ];
                 # This passes the variables into the modules.
                 specialArgs = {
                     inherit username;
