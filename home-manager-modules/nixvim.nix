@@ -8,6 +8,11 @@
     config = lib.mkIf config.nixvim.enable {
         programs.nixvim = {
             enable = true;
+
+        colorschemes.catppuccin = {
+	      enable = true;
+	      settings.flavour = "mocha";
+	    };
         };
     };
 }
