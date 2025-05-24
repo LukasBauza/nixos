@@ -1,0 +1,12 @@
+{ config, pkgs, ... }:
+
+{
+    options = {
+        neovim.enable = lib.mkEnableOption "enables neovim"
+    }
+
+    config = lib.mkIf config.git.enable {
+        home.packages = [ pkgs.neovim pkgs.wl-clipboard ];
+        programs.neovim.enable = true;
+    }
+}

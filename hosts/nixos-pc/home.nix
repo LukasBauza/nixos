@@ -7,13 +7,19 @@
   home.homeDirectory = "/home/lukas";
 
   imports = [
-	./development/git.nix
-	./development/doom_emacs.nix
-    #./development/nvim.nix
-	./development/wezterm.nix
-	./development/tools.nix
-	./system/font.nix
+    ../../home-manager-modules/default.nix
+	# ./development/git.nix
+	# ./development/doom_emacs.nix
+	#    #./development/nvim.nix
+	# ./development/wezterm.nix
+	# ./development/tools.nix
+	# ./system/font.nix
   ];
+
+    git.enable = true;
+    neovim.enable = true;
+    tools.enable = true;
+    wezterm.enable = true;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
