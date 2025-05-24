@@ -10,8 +10,8 @@
         programs.neovim = {
             enable = true;
             defaultEditor = true;
-            extraConfig = lib.fileContents ../../nvim/init.lua
-        }
+            extraConfig = lib.fileContents ../../nvim/init.lua;
+        };
 
         environment.variables.EDITOR = "nvim";
     };
