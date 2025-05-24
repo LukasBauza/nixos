@@ -2,7 +2,7 @@
 
 {
     options = {
-        git.enable = lib.mkEnableOption "enables git"
+        git.enable = lib.mkEnableOption "enables git";
     };
 
     config = lib.mkIf config.git.enable {

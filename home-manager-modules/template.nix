@@ -3,7 +3,7 @@
 {
     options = {
         # FIX: MODULE_NAME should be the name of the module.
-        MODULE_NAME.enable = lib.mkEnableOption "enables MODULE_NAME"
+        MODULE_NAME.enable = lib.mkEnableOption "enables MODULE_NAME";
     };
 
     config = lib.mkIf config.git.enable {

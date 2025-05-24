@@ -2,7 +2,7 @@
 
 {
     options = {
-        wezterm.enable = lib.mkEnableOption "enables wezterm"
+        wezterm.enable = lib.mkEnableOption "enables wezterm";
     };
 
     config = lib.mkIf config.git.enable {

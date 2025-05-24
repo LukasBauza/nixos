@@ -2,7 +2,7 @@
 
 {
     options = {
-        neovim.enable = lib.mkEnableOption "enables neovim"
+        neovim.enable = lib.mkEnableOption "enables neovim";
     }
 
     config = lib.mkIf config.git.enable {
