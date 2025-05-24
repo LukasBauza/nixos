@@ -8,12 +8,6 @@
 
   imports = [
     ../../home-manager-modules/default.nix
-	# ./development/git.nix
-	# ./development/doom_emacs.nix
-	#    #./development/nvim.nix
-	# ./development/wezterm.nix
-	# ./development/tools.nix
-	# ./system/font.nix
   ];
 
     git.enable = true;
