@@ -12,19 +12,19 @@
         
         # Exclude GNOME packages.
         environment.gnome.excludePackages = with pkgs; [
-            pkgs.cheese
-            pkgs
-            pkgs.yelp
-            pkgs.file-roller
-            pkgs.geary
-            pkgs.seahorse
-            pkgs.gnome-music
-            pkgs-tour
-            pkgs.gnome-calendar
-            pkgs.gnome-weather
-            pkgs.gnome-contacts
-            pkgs.gnome-maps
-            pkgs.epiphany
+            cheese
+            gedit
+            yelp
+            file-roller
+            geary
+            seahorse
+            gnome-music
+            gnome-tour
+            gnome-calendar
+            gnome-weather
+            gnome-contacts
+            gnome-maps
+            epiphany
         ];
     };
 }
