@@ -11,6 +11,7 @@
     ];
 
   gnome.enable = true;
+  fonts.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
