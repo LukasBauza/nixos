@@ -12,6 +12,7 @@
 
     git.enable = true;
     neovim.enable = true;
+    nixvim.enable = true;
     tools.enable = true;
     wezterm.enable = true;
 
