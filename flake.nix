@@ -22,7 +22,6 @@
         name = "Lukas";
         pkgs = import nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };
         pkgs-unstable = import nixpkgs-unstable { system = "x86_64-linux"; config.allowUnfree = true; };
-        nixvim = import nixvim;
     in {
         nixosConfigurations = {
             # nixos-pc is the hostname that is used on the system
