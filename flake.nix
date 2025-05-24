@@ -24,12 +24,14 @@
             nixos-pc = nixpkgs.lib.nixosSystem {
                 inherit system;
                 modules = [ ./configuration.nix ];
+                # This passes the variables into the modules.
                 specialArgs = {
                     inherit username;
                     inherit name;
                     inherit pkgs-unstable;
                 };
             };
+
             nixos-laptop = nixpkgs.lib.nixosSystem {
                 inherit system;
                 modules = [ ./configuration.nix ];
