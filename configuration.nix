@@ -60,6 +60,8 @@
       swtpm.enable = true;
    };
 
+  programs.steam.enable = true;
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -107,6 +109,7 @@
     #  thunderbird
     gnomeExtensions.forge
     gnomeExtensions.blur-my-shell
+    gnomeExtensions.syncthing-toggle
     ];
   };
 

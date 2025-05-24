@@ -12,7 +12,7 @@
 
     outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }:
     let
-        lib = nixpkgs.lib;
+            #lib = nixpkgs.lib;
         system = "x86_64-linux";
         username = "Lukas";
         name = "Lukas";
@@ -20,7 +20,17 @@
         pkgs-unstable = import nixpkgs-unstable { system = "x86_64-linux"; config.allowUnfree = true; };
     in {
         nixosConfigurations = {
-            nixos-pc = lib.nixosSystem {
+            # nixos-pc is the hostname that is used on the system
+            nixos-pc = nixpkgs.lib.nixosSystem {
+                inherit system;
+                modules = [ ./configuration.nix ];
+                specialArgs = {
+                    inherit username;
+                    inherit name;
+                    inherit pkgs-unstable;
+                };
+            };
+            nixos-laptop = nixpkgs.lib.nixosSystem {
                 inherit system;
                 modules = [ ./configuration.nix ];
                 specialArgs = {
