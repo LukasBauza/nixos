@@ -13,11 +13,10 @@
     git.enable = true;
     neovim.enable = true;
     neovide.enable = true;
+    helix.enable = true;
     #nixvim.enable = true;
     tools.enable = true;
     wezterm.enable = true;
-    vscode.enable = true;
-    zed-editor.enable = true;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release

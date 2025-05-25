@@ -4,10 +4,9 @@
         ./git.nix
         ./nvim/nvim.nix
         ./nvim/neovide.nix
+        ./helix.nix
         ./nixvim.nix
         ./tools.nix
         ./wezterm.nix
-        ./vscode.nix
-        ./zed-editor.nix
     ];
 }
