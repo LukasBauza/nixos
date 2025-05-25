@@ -2,8 +2,8 @@
     imports = [
         ./doom-emacs.nix
         ./git.nix
-        ./neovim/neovim.nix
-        ./neovim/neovide.nix
+        ./nvim/neovim.nix
+        ./nvim/neovide.nix
         ./nixvim.nix
         ./tools.nix
         ./wezterm.nix
