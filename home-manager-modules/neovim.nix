@@ -10,12 +10,15 @@
         programs.neovim = {
             package = pkgs-unstable.neovim-unwrapped;
             enable = true;
+            defaultEditor = true;
 
             viAlias = true;
             vimAlias = true;
             vimdiffAlias = true;
 
-            defaultEditor = true;
+            extraLuaConfig = ''
+                ${builtins.readFile ./init.lua}
+            ''
         };
     };
 }

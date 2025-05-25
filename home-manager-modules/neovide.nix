@@ -7,6 +7,7 @@
 
     config = lib.mkIf config.neovide.enable {
         programs.neovide = {
+            enable = true;
             package = pkgs-unstable.neovide;
         };
     };
