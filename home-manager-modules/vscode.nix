@@ -6,6 +6,6 @@
     };
 
     config = lib.mkIf config.vscode.enable {
-        packages.git.enable = true;
+        programs.vscode.enable = true;
     };
 }
