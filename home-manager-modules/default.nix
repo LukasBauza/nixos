@@ -8,6 +8,6 @@
         ./tools.nix
         ./wezterm.nix
         ./vscode.nix
-        ./zed.nix
+        ./zed-editor.nix
     ];
 }
