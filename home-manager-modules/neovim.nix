@@ -18,7 +18,7 @@
 
             extraLuaConfig = ''
                 ${builtins.readFile ./init.lua}
-            ''
+            '';
         };
     };
 }
