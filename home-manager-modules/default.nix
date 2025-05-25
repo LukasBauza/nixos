@@ -4,8 +4,8 @@
         ./git.nix
         ./nvim/nvim.nix
         ./nvim/neovide.nix
-        ./helix.nix
         ./nixvim.nix
+        ./helix.nix
         ./tools.nix
         ./wezterm.nix
     ];
