@@ -27,6 +27,8 @@
 
             extraLuaConfig = ''
                 ${builtins.readFile ./init.lua}
+                ${builtins.readFile ./lua/lukas/options.lua}
+                ${builtins.readFile ./lua/lukas/keymaps.lua}
             '';
         };
     };
