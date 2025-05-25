@@ -16,6 +16,15 @@
             vimAlias = true;
             vimdiffAlias = true;
 
+            extraPackages = withh pkgs; [
+                # lua
+                lua-language-server
+                stylua
+                # nix
+                nixpkgs-fmt
+                nixd
+            ];
+
             extraLuaConfig = ''
                 ${builtins.readFile ./init.lua}
             '';
