@@ -17,7 +17,7 @@
     tools.enable = true;
     wezterm.enable = true;
     vscode.enable = true;
-    zed.enable = true;
+    zed-editor.enable = true;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
