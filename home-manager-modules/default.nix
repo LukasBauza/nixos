@@ -4,7 +4,7 @@
         ./git.nix
         ./neovim/neovim.nix
         ./neovim/neovide.nix
-        ./neovim/nixvim.nix
+        ./nixvim.nix
         ./tools.nix
         ./wezterm.nix
     ];
