@@ -17,18 +17,18 @@
             vimdiffAlias = true;
 
             extraPackages = with pkgs; [
-                # lua
-                lua-language-server
-                stylua
-                # nix
-                nixpkgs-fmt
-                nixd
+                # # lua
+                # lua-language-server
+                # stylua
+                # # nix
+                # nixpkgs-fmt
+                # nixd
             ];
 
             extraLuaConfig = ''
-                luafile .init.lua
-                luafile ./lua/lukas/options.lua
-                luafile ./lua/lukas/keymaps.lua
+                # luafile .init.lua
+                # luafile ./lua/lukas/options.lua
+                # luafile ./lua/lukas/keymaps.lua
             '';
         };
     };
