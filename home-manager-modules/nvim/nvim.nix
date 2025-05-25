@@ -25,11 +25,11 @@
                 # nixd
             ];
 
-            extraLuaConfig = ''
-                # luafile .init.lua
-                # luafile ./lua/lukas/options.lua
-                # luafile ./lua/lukas/keymaps.lua
-            '';
+            # extraLuaConfig = ''
+            #     # luafile .init.lua
+            #     # luafile ./lua/lukas/options.lua
+            #     # luafile ./lua/lukas/keymaps.lua
+            # '';
         };
     };
 }
