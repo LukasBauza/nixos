@@ -40,8 +40,8 @@
 		swappy
         file
         spotify
+        mediawriter
 		#logseq
-		#ciscoPacketTracer8
 		])
 	++
 	(with pkgs-unstable; [
