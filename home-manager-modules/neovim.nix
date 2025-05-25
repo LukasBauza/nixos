@@ -16,7 +16,7 @@
             vimAlias = true;
             vimdiffAlias = true;
 
-            extraPackages = withh pkgs; [
+            extraPackages = with pkgs; [
                 # lua
                 lua-language-server
                 stylua
