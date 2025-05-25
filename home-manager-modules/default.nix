@@ -7,5 +7,6 @@
         ./nixvim.nix
         ./tools.nix
         ./wezterm.nix
+        ./vscode.nix
     ];
 }
