@@ -6,6 +6,7 @@
     };
 
     config = lib.mkIf config.discord.enable {
+        home.packages = [ pkgs.discord ];
         programs.discord.enable = true;
     };
 }

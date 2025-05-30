@@ -11,7 +11,7 @@
   ];
 
     git.enable = true;
-    discord.enable = true;
+    #discord.enable = true;
     neovim.enable = true;
     neovide.enable = true;
     helix.enable = true;
@@ -31,6 +31,7 @@
   home.packages = 
   	(with pkgs; [
 		python3
+        discord
 		protonvpn-gui
 		syncthing
 		syncthingtray
