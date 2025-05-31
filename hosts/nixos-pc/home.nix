@@ -41,6 +41,7 @@
 		drawio
 		jetbrains-toolbox
 		swappy
+        swtpm           # needed for win11 virt
         file
         spotify
         mediawriter

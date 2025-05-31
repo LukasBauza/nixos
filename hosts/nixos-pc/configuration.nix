@@ -70,6 +70,8 @@
       swtpm.enable = true;
    };
 
+   virtualisation.spiceUSBRedirection.enable = true;
+
   programs.steam.enable = true;
 
   # Enable the X11 windowing system.
@@ -92,7 +94,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
