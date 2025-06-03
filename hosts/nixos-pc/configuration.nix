@@ -13,7 +13,12 @@
   gnome.enable = true;
   fonts.enable = true;
 
+  # Set the kernel to 6.6, as there is some bug with the latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_6_6;
+
+  # Allow the OS to adjust the monitor brightness.
+  boot.extraModulePackages = [config.boot.kernelPackages.ddcci-driver];
+  boot.kernelModules = ["i2c-dev" "ddcci_backlight"];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -65,7 +70,7 @@
       swtpm.enable = true;
    };
 
-  programs.steam.enable = true;
+   virtualisation.spiceUSBRedirection.enable = true;
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;

@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, pkgs-unstable, lib, ... }:
 
 {
     options = {
@@ -6,6 +6,9 @@
     };
 
     config = lib.mkIf config.helix.enable {
-        programs.helix.enable = true;
+        programs.helix = {
+            package = pkgs-unstable.helix;
+            enable = true;
+        };
     };
 }

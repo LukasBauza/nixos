@@ -11,6 +11,7 @@
   ];
 
     git.enable = true;
+    #discord.enable = true;
     neovim.enable = true;
     neovide.enable = true;
     helix.enable = true;
@@ -30,6 +31,7 @@
   home.packages = 
   	(with pkgs; [
 		python3
+        discord
 		protonvpn-gui
 		syncthing
 		syncthingtray
@@ -39,6 +41,7 @@
 		drawio
 		jetbrains-toolbox
 		swappy
+        swtpm           # needed for win11 virt
         file
         spotify
         mediawriter
