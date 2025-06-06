@@ -120,6 +120,7 @@
     gnomeExtensions.forge
     gnomeExtensions.blur-my-shell
     gnomeExtensions.syncthing-toggle
+    gnomeExtensions.paperwm
     ];
   };
 
