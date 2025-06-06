@@ -15,7 +15,6 @@
             cheese
             gedit
             yelp
-            file-roller
             geary
             seahorse
             gnome-music
