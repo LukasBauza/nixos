@@ -13,8 +13,8 @@
             gnumake
             libtool
             distrobox
-            #podman
             arduino-ide
+            jetbrains.idea-ultimate
         ];
     };
 }
