@@ -39,7 +39,6 @@
 		jdk
 		unzip		    # Needed for nvim stylua
 		drawio
-		jetbrains-toolbox
 		swappy
         swtpm           # needed for win11 virt
         file
