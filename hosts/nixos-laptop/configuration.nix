@@ -92,6 +92,10 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
     #  thunderbird
+    gnomeExtenstions.forge
+    gnomeExtenstions.blur-my-shell
+    gnomeExtenstions.syncthing-toggle
+    gnomeExtenstions.paperwm
     ];
   };
 
