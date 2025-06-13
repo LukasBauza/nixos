@@ -45,6 +45,11 @@
     LC_TIME = "en_GB.UTF-8";
   };
 
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+  };
+
   services.flatpak.enable = true;
 
   # Enable the X11 windowing system.
