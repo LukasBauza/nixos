@@ -12,11 +12,15 @@
             # If using a stable channel you can use `url = "github:nix-community/nixvim/nixos-<version>"`
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        nix-snap = {
+            url = "github:nix-community/nix-snapd";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
 
-    outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixvim, ... }:
+    outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixvim, nix-snapd, ... }:
     let
-            #lib = nixpkgs.lib;
+        #lib = nixpkgs.lib;
         system = "x86_64-linux";
         username = "Lukas";
         name = "Lukas";
@@ -30,6 +34,10 @@
                 modules = [
                         ./hosts/nixos-pc/configuration.nix
                         ./nixos-modules/default.nix
+                        nix-snapd.nixosModules.default
+                        {
+                          services.snap.enable = true;
+                        }
                     ];
                 # This passes the variables into the modules.
                 specialArgs = {
@@ -44,6 +52,10 @@
                 modules = [
                         ./hosts/nixos-laptop/configuration.nix
                         ./nixos-modules/default.nix
+                        nix-snapd.nixosModules.default
+                        {
+                          services.snap.enable = true;
+                        }
                     ];
                 specialArgs = {
                     inherit username;
