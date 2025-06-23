@@ -44,7 +44,7 @@
 	++
 	(with pkgs-unstable; [
 		brave
-        neovim
+            #neovim
 		wl-clipboard
 		libreoffice
 		zoxide
