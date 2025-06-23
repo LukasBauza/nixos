@@ -82,7 +82,7 @@
             "lukas@nixos-laptop" = home-manager.lib.homeManagerConfiguration {
                 inherit pkgs;
                 modules = [
-                        ./hosts/nixos-pc/home.nix
+                        ./hosts/nixos-laptop/home.nix
                         ./home-manager-modules/default.nix
                         nixvim.homeManagerModules.nixvim
                     ];
