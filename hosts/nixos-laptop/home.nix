@@ -7,13 +7,17 @@
   home.homeDirectory = "/home/lukas";
 
   imports = [
-	./development/git.nix
-	./development/doom_emacs.nix
-    #./development/nvim.nix
-	./development/wezterm.nix
-	./development/tools.nix
-	./system/font.nix
+    ../../home-manager-modules/default.nix
   ];
+
+    git.enable = true;
+    #discord.enable = true;
+    #neovim.enable = true;
+    neovide.enable = true;
+    helix.enable = true;
+    #nixvim.enable = true;
+    tools.enable = true;
+    wezterm.enable = true;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -27,6 +31,7 @@
   home.packages = 
   	(with pkgs; [
 		python3
+        discord
 		protonvpn-gui
 		syncthing
 		syncthingtray
@@ -34,17 +39,16 @@
 		jdk
 		unzip		    # Needed for nvim stylua
 		drawio
-		jetbrains-toolbox
 		swappy
+        swtpm           # needed for win11 virt
         file
         spotify
+        mediawriter
 		#logseq
-		#ciscoPacketTracer8
 		])
 	++
 	(with pkgs-unstable; [
 		brave
-            #neovim
 		wl-clipboard
 		libreoffice
 		zoxide
