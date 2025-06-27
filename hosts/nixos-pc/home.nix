@@ -33,6 +33,7 @@
 		python3
         discord
 		protonvpn-gui
+        protonmail-desktop
 		syncthing
 		syncthingtray
 		zotero
