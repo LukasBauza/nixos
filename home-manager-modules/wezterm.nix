@@ -22,7 +22,8 @@
             -- For example, changing the color scheme:
             config.color_scheme = "Kanagawa (Gogh)"
 
-            config.font = wezterm.font("IntoneMono Nerd Font")
+            -- config.font = wezterm.font("IntoneMono Nerd Font")
+            config.font = wezterm.font("JetBrains Mono")
             config.font_size = 15.0
 
             config.use_fancy_tab_bar = true
