@@ -3,7 +3,7 @@
         ./doom-emacs.nix
         #./discord.nix
         ./git.nix
-        ./nvim/nvim.nix
+        ./nvim/default.nix
         ./nvim/neovide.nix
         ./tools.nix
         ./wezterm.nix
