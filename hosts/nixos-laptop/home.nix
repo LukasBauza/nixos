@@ -10,6 +10,7 @@
     ../../home-manager-modules/default.nix
   ];
 
+    android.enable = true;
     git.enable = true;
     #discord.enable = true;
     #neovim.enable = true;
