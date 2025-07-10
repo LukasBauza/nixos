@@ -15,7 +15,6 @@
             distrobox
             arduino-ide
             jetbrains.idea-ultimate
-	    android-studio-full
             zed-editor
         ];
     };
