@@ -12,7 +12,6 @@
 
     git.enable = true;
     #discord.enable = true;
-    neovim.enable = true;
     neovide.enable = true;
     #nixvim.enable = true;
     tools.enable = true;
