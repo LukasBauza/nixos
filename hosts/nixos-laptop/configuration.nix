@@ -132,6 +132,8 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
+  # Needed for allowing ProtonVPN to work.
+  networking.firewall.checkReversePath = false;
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
