@@ -42,7 +42,6 @@
         swtpm           # needed for win11 virt
         file
         spotify
-        impression
 		#logseq
 		])
 	++

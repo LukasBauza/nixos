@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
     ];
 
+  gnome.enable = true;
   fonts.enable = true;
 
   # Bootloader.
