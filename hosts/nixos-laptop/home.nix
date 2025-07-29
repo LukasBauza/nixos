@@ -10,7 +10,6 @@
     ../../home-manager-modules/default.nix
   ];
 
-	#android-studio.enable = true;
     git.enable = true;
     #discord.enable = true;
     #neovim.enable = true;
@@ -48,7 +47,6 @@
 	(with pkgs-unstable; [
 		brave
 		wl-clipboard
-		libreoffice
 		zoxide
 		fzf
 		]);
