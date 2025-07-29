@@ -14,7 +14,6 @@
             libtool
             distrobox
             arduino-ide
-            jetbrains.idea-ultimate
             zed-editor
         ];
     };

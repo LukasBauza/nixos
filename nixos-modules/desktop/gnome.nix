@@ -25,5 +25,14 @@
             gnome-maps
             epiphany
         ];
+       
+	users.users.lukas.packages = with pkgs; [
+		    gnomeExtensions.forge
+		    gnomeExtensions.blur-my-shell
+		    gnomeExtensions.syncthing-toggle
+		    gnomeExtensions.paperwm
+		    gnomeExtensions.just-perfection
+
+		];
     };
 }
