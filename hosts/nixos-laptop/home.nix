@@ -12,7 +12,7 @@
 
     git.enable = true;
     #discord.enable = true;
-    #neovim.enable = true;
+    neovim.enable = true;
     neovide.enable = true;
     tools.enable = true;
     wezterm.enable = true;
