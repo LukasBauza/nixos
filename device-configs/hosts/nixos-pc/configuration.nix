@@ -10,7 +10,8 @@
       ./hardware-configuration.nix
     ];
 
-  gnome.enable = true;
+  gnome.enable = false;
+  kde.enable = true;
   fonts.enable = true;
 
   # Set the kernel to 6.6, as there is some bug with the latest kernel.
@@ -75,10 +76,6 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the GNOME Desktop Environment.
-  # services.xserver.displayManager.gdm.enable = true;
-  # services.xserver.desktopManager.gnome.enable = true;
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "gb";
@@ -117,11 +114,11 @@
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     packages = with pkgs; [
     #  thunderbird
-    gnomeExtensions.forge
-    gnomeExtensions.blur-my-shell
-    gnomeExtensions.syncthing-toggle
-    gnomeExtensions.paperwm
-    gnomeExtensions.just-perfection
+    # gnomeExtensions.forge
+    # gnomeExtensions.blur-my-shell
+    # gnomeExtensions.syncthing-toggle
+    # gnomeExtensions.paperwm
+    # gnomeExtensions.just-perfection
     ];
   };
 
@@ -145,10 +142,10 @@
   #   enableSSHSupport = true;
   # };
 
-  programs.kdeconnect = {
-    enable = true;
-    package = pkgs.gnomeExtensions.gsconnect;
-  };
+  # programs.kdeconnect = {
+  #   enable = true;
+  #   package = pkgs.gnomeExtensions.gsconnect;
+  # };
 
   # List services that you want to enable:
 
