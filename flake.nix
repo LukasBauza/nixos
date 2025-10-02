@@ -12,6 +12,7 @@
             # If using a stable channel you can use `url = "github:nix-community/nixvim/nixos-<version>"`
             inputs.nixpkgs.follows = "nixpkgs";
         };
+	# TODO: remove snapd
         nix-snapd = {
             url = "github:nix-community/nix-snapd";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -32,8 +33,9 @@
             nixos-pc = nixpkgs.lib.nixosSystem {
                 inherit system;
                 modules = [
-                        ./hosts/nixos-pc/configuration.nix
-                        ./nixos-modules/default.nix
+                        ./device-configs/hosts/nixos-pc/configuration.nix
+                        ./device-configs/nixos-modules/default.nix
+			# TODO: Remove snapd
                         nix-snapd.nixosModules.default
                         {
                           services.snap.enable = true;
@@ -50,8 +52,9 @@
             nixos-laptop = nixpkgs.lib.nixosSystem {
                 inherit system;
                 modules = [
-                        ./hosts/nixos-laptop/configuration.nix
-                        ./nixos-modules/default.nix
+                        ./device-configs/hosts/nixos-laptop/configuration.nix
+                        ./device-configs/nixos-modules/default.nix
+			# TODO: Remove snapd
                         nix-snapd.nixosModules.default
                         {
                           services.snap.enable = true;
@@ -69,8 +72,9 @@
             "lukas@nixos-pc" = home-manager.lib.homeManagerConfiguration {
                 inherit pkgs;
                 modules = [
-                        ./hosts/nixos-pc/home.nix
+                        ./device-configs/hosts/nixos-pc/home.nix
                         ./home-manager-modules/default.nix
+			# TODO: remove nixvim
                         nixvim.homeManagerModules.nixvim
                     ];
                 extraSpecialArgs = {
@@ -82,8 +86,9 @@
             "lukas@nixos-laptop" = home-manager.lib.homeManagerConfiguration {
                 inherit pkgs;
                 modules = [
-                        ./hosts/nixos-laptop/home.nix
+                        ./device-configs/hosts/nixos-laptop/home.nix
                         ./home-manager-modules/default.nix
+			# TODO: remove nixvim
                         nixvim.homeManagerModules.nixvim
                     ];
                 extraSpecialArgs = {
