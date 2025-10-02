@@ -34,7 +34,7 @@
                 inherit system;
                 modules = [
                         ./device-configs/hosts/nixos-pc/configuration.nix
-                        ./device-configs/nixos-modules/default.nix
+                        ./nixos-modules/default.nix
 			# TODO: Remove snapd
                         nix-snapd.nixosModules.default
                         {
@@ -53,7 +53,7 @@
                 inherit system;
                 modules = [
                         ./device-configs/hosts/nixos-laptop/configuration.nix
-                        ./device-configs/nixos-modules/default.nix
+                        ./nixos-modules/default.nix
 			# TODO: Remove snapd
                         nix-snapd.nixosModules.default
                         {
