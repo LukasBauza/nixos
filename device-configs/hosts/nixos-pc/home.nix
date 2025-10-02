@@ -7,7 +7,7 @@
   home.homeDirectory = "/home/lukas";
 
   imports = [
-    ../../home-manager-modules/default.nix
+    ../../../home-manager-modules/default.nix
   ];
 
     git.enable = true;
