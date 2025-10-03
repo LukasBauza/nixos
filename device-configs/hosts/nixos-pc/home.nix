@@ -10,6 +10,7 @@
     ../../../home-manager-modules/default.nix
   ];
 
+    doom-emacs.enable = true;
     git.enable = true;
     #discord.enable = true;
     neovide.enable = true;
