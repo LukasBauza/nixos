@@ -10,8 +10,8 @@
       ./hardware-configuration.nix
     ];
 
-  gnome.enable = false;
-  kde.enable = true;
+  gnome.enable = true;
+  kde.enable = false;
   fonts.enable = true;
 
   # Set the kernel to 6.6, as there is some bug with the latest kernel.
@@ -25,7 +25,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.luks.devices."luks-8a5943ae-dc07-440d-a94d-9886af5efecc".device = "/dev/disk/by-uuid/8a5943ae-dc07-440d-a94d-9886af5efecc";
+  boot.initrd.luks.devices."luks-7aebe02a-8a83-4126-acbc-7085a6d05116".device = "/dev/disk/by-uuid/7aebe02a-8a83-4126-acbc-7085a6d05116";
   networking.hostName = "nixos-pc"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
