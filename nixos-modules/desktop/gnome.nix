@@ -32,7 +32,7 @@
 		    gnomeExtensions.syncthing-toggle
 		    gnomeExtensions.paperwm
 		    gnomeExtensions.just-perfection
-
+            gnomeExtensions.appindicator
 		];
     };
 }
